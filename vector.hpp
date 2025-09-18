@@ -46,14 +46,8 @@ public:
         std::copy(list.begin(), list.end(), data_ptr);
     }
 
-    ~Vector() { //destructer
-        for (size_t i = 0; i < sz; ++i) {
-            data_ptr[i].~T();
-        }
+    ~Vector() { //destructor
         delete[] data_ptr;
-        data_ptr = nullptr;
-        sz = 0;
-        cap = 0;
     }
 
     void swap(Vector& vector) {
