@@ -115,13 +115,13 @@ public:
     T& back() {
         if (this->empty())
             throw std::out_of_range("Empty vector doesnt have back element");
-        return data_ptr[0];
+        return data_ptr[sz - 1];
     } 
 
     const T& back() const{
         if (this->empty())
             throw std::out_of_range("Empty vector doesnt have back element");
-        return data_ptr[0];
+        return data_ptr[sz - 1];
     } 
 
     T* data() {
