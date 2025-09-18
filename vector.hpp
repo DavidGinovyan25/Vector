@@ -23,9 +23,7 @@ public:
             , sz(n)
             , cap(n) {
 
-        for (size_t i = 0; i < n; ++i) {
-            data_ptr[i] = value;
-        }
+        std::fill(data_ptr, data_ptr + n, value);
     }
 
     Vector(const Vector& v) //copy construstor
@@ -33,9 +31,7 @@ public:
             , sz(v.sz)
             , cap(v.cap) {
         
-        for (size_t i = 0; i < sz; ++i) {
-            data_ptr[i] = v.data_ptr[i];
-        }
+        std::copy(data_ptr, data_ptr + sz, v.data_ptr);
     }
 
     Vector(std::initializer_list<T> list) 
