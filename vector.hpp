@@ -47,6 +47,9 @@ public:
     }
 
     ~Vector() { //destructer
+        for (size_t i = 0; i < sz; ++i) {
+            data_ptr[i].~T();
+        }
         delete[] data_ptr;
         data_ptr = nullptr;
         sz = 0;
